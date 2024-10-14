@@ -11,21 +11,26 @@ import { useNavigate } from 'react-router-dom';
 function OAuth() {
 
     const auth = getAuth(app);
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const handleGoogleClick = async () => {
-        const provider = GoogleAuthProvider();
+
+        const provider = new GoogleAuthProvider();
+
+        // once you login with one google account the next time it won't even ask your choice, so to disable this I have set the custom parameters
         provider.setCustomParameters({prompt: 'select_account'});
+
         try {
-            const resultsFormGoogle = await signInWithPopup(auth, provider)
+            const resultsFromGoogle = await signInWithPopup(auth, provider)
             const res = await fetch('/api/auth/google', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
-                    name: resultsFormGoogle.user.displayName,
-                    email: resultsFormGoogle.user.email,
-                    googlePhotoUrl: resultsFormGoogle.user.photoURL
+                    name: resultsFromGoogle.user.displayName,
+                    email: resultsFromGoogle.user.email,
+                    googlePhotoUrl: resultsFromGoogle.user.photoURL
                 })
             })
             const data = await res.json();

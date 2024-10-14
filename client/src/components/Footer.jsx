@@ -24,11 +24,11 @@ function FooterCom() {
               <Footer.Title title='About' />
               <Footer.LinkGroup col>
                 <Footer.Link
-                  href='https://www.100jsprojects.com'
+                  href='https://www.instagram.com/jashan._.753/?next=%2F'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  100 JS Projects
+                  Instagram
                 </Footer.Link>
                 <Footer.Link
                   href='/about'
@@ -43,13 +43,13 @@ function FooterCom() {
               <Footer.Title title='Follow us' />
               <Footer.LinkGroup col>
                 <Footer.Link
-                  href='https://www.github.com/sahandghavidel'
+                  href='https://github.com/jashanp2005'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
                   Github
                 </Footer.Link>
-                <Footer.Link href='#'>Discord</Footer.Link>
+                <Footer.Link href='https://in.linkedin.com/in/jashanp2005'>Linkedin</Footer.Link>
               </Footer.LinkGroup>
             </div>
             <div>
