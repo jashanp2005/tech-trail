@@ -23,6 +23,8 @@ function DashProfile() {
   const [formData, setFormData] = useState({});
 
   const filePickerRef = useRef();
+  // used to hide the choose file option by creating a reference
+
   const dispatch = useDispatch();
 
   const handleImageChange = (e) => {
@@ -154,6 +156,7 @@ function DashProfile() {
 
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
 
+      {/* image/* means any type of image */}
       <input type='file' accept='image/*' onChange={handleImageChange} ref={filePickerRef} hidden />
 
         {/* Div for keeping the image, giving it shadow and making it rounded */}

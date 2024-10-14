@@ -59,6 +59,7 @@ function Search() {
         fetchPosts();
     }, [location.search]);
 
+
     const handleChange = (e) => {
       if (e.target.id === 'searchTerm') {
         setSidebarData({ ...sidebarData, searchTerm: e.target.value });
@@ -73,6 +74,7 @@ function Search() {
       }
     }
 
+
     const handleSubmit = (e) => {
       e.preventDefault();
       const urlParams = new URLSearchParams(location.search);
@@ -82,6 +84,7 @@ function Search() {
       const searchQuery = urlParams.toString();
       navigate(`/search?${searchQuery}`);
     }
+
 
     const handleShowMore = async () => {
 
@@ -172,7 +175,7 @@ function Search() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Search
+export default Search;

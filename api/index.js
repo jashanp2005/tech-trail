@@ -5,11 +5,13 @@ import authRoutes from './routes/auth.route.js';
 import cookieParser from "cookie-parser";
 import postRoutes from "./routes/post.route.js";
 import commentRoutes from './routes/comment.route.js'
-// import dotevnv from 'dotenv';
+import dotenv from 'dotenv';
 
-// dotenv.config();
+dotenv.config();
 
-mongoose.connect('mongodb://localhost:27017/mern-blog').then(() => console.log('Database is connected')).catch((e) => console.log(e));
+console.log('MONGO_URL:', process.env.MONGO_URL);
+
+mongoose.connect(process.env.MONGO_URL).then(() => console.log('Database is connected')).catch((e) => console.log(e));
 
 const app = express();
 app.use(express.json());
@@ -38,5 +40,3 @@ app.use((err, req, res, next) => {
     });
 });
 
-// To do -
-// check the verifyUser.js, there's something wrong in it
